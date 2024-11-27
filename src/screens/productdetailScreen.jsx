@@ -1,76 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList, TextInput, Alert } from 'react-native';
-import productsData from '../data/products.json';
+import React from 'react';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 const ProductDetailScreen = ({ route, navigation }) => {
-  const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  useEffect(() => {
-    try {
-      setProducts(productsData);
-      setFilteredProducts(productsData);
-    } catch (error) {
-      Alert.alert('Error', 'No se pudieron cargar los productos.');
-      console.error('Error al cargar productos:', error);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (searchQuery) {
-      const filtered = products.filter((product) =>
-        product.name.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      setFilteredProducts(filtered);
-    } else {
-      setFilteredProducts(products);
-    }
-  }, [searchQuery]);
-
-  const handleProductPress = (product) => {
-    navigation.navigate('ProductDetailScreen', { product });
-  };
-
-  const handleBuyPress = (product) => {
-    Alert.alert('Compra realizada', `Has comprado: ${product.name}`);
-  };
-
-  const renderProductItem = ({ item }) => (
-    <View style={styles.productCard}>
-      <Image source={{ uri: item.image }} style={styles.productImage} />
-      <Text style={styles.productName}>{item.name}</Text>
-      <Text style={styles.productPrice}>${item.price.toLocaleString()}</Text>
-      <Text style={styles.productDescription}>{item.description}</Text>
-      <TouchableOpacity
-        style={styles.buyButton}
-        onPress={() => handleBuyPress(item)}
-      >
-        <Text style={styles.buyButtonText}>Comprar</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.detailsButton}
-        onPress={() => handleProductPress(item)}
-      >
-        <Text style={styles.detailsButtonText}>Ver detalles</Text>
-      </TouchableOpacity>
-    </View>
-  );
+  const { product } = route.params;
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.searchInput}
-        placeholder="Buscar productos..."
-        value={searchQuery}
-        onChangeText={(text) => setSearchQuery(text)}
-      />
-      <FlatList
-        data={filteredProducts}
-        renderItem={renderProductItem}
-        keyExtractor={(item) => item.id.toString()}
-        contentContainerStyle={styles.flatListContent}
-      />
+      <Image source={{ uri: product.image }} style={styles.productImage} />
+      <Text style={styles.productName}>{product.name}</Text>
+      <Text style={styles.productPrice}>${product.price.toLocaleString()}</Text>
+      <Text style={styles.productDescription}>{product.description}</Text>
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}
+      >
+        <Text style={styles.backButtonText}>Volver</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -78,73 +23,44 @@ const ProductDetailScreen = ({ route, navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
     backgroundColor: '#f9f9f9',
-  },
-  searchInput: {
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 5,
-    paddingLeft: 10,
-    marginBottom: 20,
-    backgroundColor: '#fff',
-  },
-  flatListContent: {
-    paddingBottom: 20,
-  },
-  productCard: {
-    backgroundColor: '#fff',
-    marginBottom: 20,
-    borderRadius: 10,
-    padding: 15,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
-    elevation: 5,
+    padding: 20,
+    alignItems: 'center',
   },
   productImage: {
     width: '100%',
-    height: 200,
+    height: 300,
     borderRadius: 10,
-    marginBottom: 10,
+    marginBottom: 20,
   },
   productName: {
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 5,
+    marginBottom: 10,
+    textAlign: 'center',
   },
   productPrice: {
-    fontSize: 16,
+    fontSize: 20,
     color: '#ff7f50',
-    marginBottom: 5,
+    marginBottom: 15,
+    textAlign: 'center',
   },
   productDescription: {
-    fontSize: 14,
+    fontSize: 16,
     color: '#666',
-    marginBottom: 10,
+    marginBottom: 20,
+    textAlign: 'center',
   },
-  buyButton: {
-    backgroundColor: '#ff7f50',
-    paddingVertical: 10,
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  buyButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-  },
-  detailsButton: {
+  backButton: {
     backgroundColor: '#4CAF50',
     paddingVertical: 10,
+    paddingHorizontal: 20,
     borderRadius: 5,
-    alignItems: 'center',
-    marginTop: 10,
   },
-  detailsButtonText: {
+  backButtonText: {
     color: 'white',
     fontWeight: 'bold',
+    fontSize: 16,
   },
 });
 

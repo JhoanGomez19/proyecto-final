@@ -1,202 +1,37 @@
-[
-  {
-    "id": 1,
-    "name": "Casa Moderna Minimalista",
-    "price": 120000,
-    "category": "Casas Minimalistas",
-    "description": "Casa moderna con diseño minimalista, amplios espacios y acabados de lujo.",
-    "image": "./assets/casaColonial1.jpg"
-  },
-  {
-    "id": 2,
-    "name": "Casa Moderna con Piscina",
-    "price": 150000,
-    "category": "Casas Modernas",
-    "description": "Casa moderna con piscina privada, terrazas y diseño contemporáneo.",
-    "image": "./assets/casaColonial2.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Casa Moderna Inteligente",
-    "price": 180000,
-    "category": "Casas Modernas",
-    "description": "Casa inteligente con tecnología integrada y diseño minimalista.",
-    "image": "./assets/casaColonial3.jpg"
-  },
-  {
-    "id": 4,
-    "name": "Casa de Campo con Jardín",
-    "price": 100000,
-    "category": "Casas de Campo",
-    "description": "Casa de campo con jardín amplio, ideal para desconectar de la ciudad.",
-    "image": "./assets/casaColonial4.jpg"
-  },
-  {
-    "id": 5,
-    "name": "Casa de Campo Rústica",
-    "price": 85000,
-    "category": "Casas de Campo",
-    "description": "Casa rústica con detalles tradicionales y un entorno natural.",
-    "image": "./assets/casaColonial5.jpeg"
-  },
-  {
-    "id": 6,
-    "name": "Casa de Campo con Huerta",
-    "price": 95000,
-    "category": "Casas de Campo",
-    "description": "Casa ecológica con huerta propia, rodeada de naturaleza.",
-    "image": "./assets/casaDeCampo1.jpg"
-  },
-  {
-    "id": 7,
-    "name": "Casa Colonial Restaurada",
-    "price": 110000,
-    "category": "Casas Coloniales",
-    "description": "Casa colonial restaurada, combinando elementos clásicos y modernos.",
-    "image": "./assets/casaDeCampo2.jpg"
-  },
-  {
-    "id": 8,
-    "name": "Casa Colonial con Patio",
-    "price": 125000,
-    "category": "Casas Coloniales",
-    "description": "Casa colonial con patio interior y arquitectura tradicional.",
-    "image": "./assets/casaDeCampo3.jpg"
-  },
-  {
-    "id": 9,
-    "name": "Casa Colonial en el Centro",
-    "price": 140000,
-    "category": "Casas Coloniales",
-    "description": "Casa colonial en pleno centro histórico con arquitectura clásica.",
-    "image": "./assets/casaDeCampo4.jpg"
-  },
-  {
-    "id": 10,
-    "name": "Casa de Playa con Vista al Mar",
-    "price": 200000,
-    "category": "Casas de Playa",
-    "description": "Casa frente al mar, con impresionantes vistas y acceso directo a la playa.",
-    "image": "./assets/casaDeCampo5.jpg"
-  },
-  {
-    "id": 11,
-    "name": "Casa de Playa de Lujo",
-    "price": 250000,
-    "category": "Casas de Playa",
-    "description": "Casa de lujo en la playa, equipada con piscina y espacios abiertos.",
-    "image": "./assets/casaModerna1.jpg"
-  },
-  {
-    "id": 12,
-    "name": "Casa de Playa Rústica",
-    "price": 180000,
-    "category": "Casas de Playa",
-    "description": "Casa rústica junto al mar, con detalles naturales y estilo acogedor.",
-    "image": "/assets/casaModerna2.jpeg"
-  },
-  {
-    "id": 13,
-    "name": "Casa Minimalista con Terraza",
-    "price": 130000,
-    "category": "Casas Minimalistas",
-    "description": "Casa minimalista con terraza espaciosa y acabados modernos.",
-    "image": "/assets/casaModerna3.jpeg"
-  },
-  {
-    "id": 14,
-    "name": "Casa Minimalista con Piscina",
-    "price": 160000,
-    "category": "Casas Minimalistas",
-    "description": "Casa minimalista moderna con piscina privada y diseño limpio.",
-    "image": "assets/casaModerna4.jpeg"
-  },
-  {
-    "id": 15,
-    "name": "Casa Minimalista Compacta",
-    "price": 95000,
-    "category": "Casas Minimalistas",
-    "description": "Casa minimalista compacta, ideal para un estilo de vida sencillo y eficiente.",
-    "image": "assets/casaModerna5.jpg"
-  },
-  {
-    "id": 16,
-    "name": "Casa Ecológica Autosostenible",
-    "price": 180000,
-    "category": "Casas Ecológicas",
-    "description": "Casa ecológica autosostenible con paneles solares y materiales reciclados.",
-    "image": "casasDePlaya.jpg"
-  },
-  {
-    "id": 17,
-    "name": "Casa Ecológica Modular",
-    "price": 150000,
-    "category": "Casas Ecológicas",
-    "description": "Casa modular ecológica construida con materiales reciclados y energía eficiente.",
-    "image": "casasDePlaya2.jpeg"
-  },
-  {
-    "id": 18,
-    "name": "Casa Ecológica en el Bosque",
-    "price": 200000,
-    "category": "Casas Ecológicas",
-    "description": "Casa ecológica ubicada en el bosque, perfecta para vivir en armonía con la naturaleza.",
-    "image": "casasDePlaya3.jpg"
-  },
-  {
-    "id": 19,
-    "name": "Casa Tradicional con Chimenea",
-    "price": 85000,
-    "category": "Casas Tradicionales",
-    "description": "Casa tradicional con chimenea y detalles cálidos para un ambiente acogedor.",
-    "image": "casasDePlaya4.jpg"
-  },
-  {
-    "id": 20,
-    "name": "Casa Tradicional con Patio",
-    "price": 90000,
-    "category": "Casas Tradicionales",
-    "description": "Casa tradicional con patio grande, ideal para reuniones familiares.",
-    "image": "casasDePlaya5.jpeg"
-  },
-  {
-    "id": 21,
-    "name": "Casa de Lujo con Jacuzzi",
-    "price": 300000,
-    "category": "Casas de Lujo",
-    "description": "Casa de lujo con jacuzzi, vistas panorámicas y acabados premium.",
-    "image": "casasMinimalistas.jpeg"
-  },
-  {
-    "id": 22,
-    "name": "Mansión Exclusiva",
-    "price": 500000,
-    "category": "Casas de Lujo",
-    "description": "Mansión exclusiva con múltiples habitaciones y una piscina infinita.",
-    "image": "casasMinimalistas2.jpg"
-  },
-  {
-    "id": 23,
-    "name": "Casa de Lujo en la Montaña",
-    "price": 400000,
-    "category": "Casas de Lujo",
-    "description": "Casa de lujo en la montaña con vistas impresionantes y arquitectura única.",
-    "image": "casasMinimalistas3.jpg"
-  },
-  {
-    "id": 24,
-    "name": "Casa Industrial con Loft",
-    "price": 130000,
-    "category": "Casas Industriales",
-    "description": "Casa industrial con estilo loft, espacios abiertos y decoración moderna.",
-    "image": "casasMinimalistas4.jpg"
-  },
-  {
-    "id": 25,
-    "name": "Casa Industrial Urbana",
-    "price": 120000,
-    "category": "Casas Industriales",
-    "description": "Casa urbana con diseño industrial, detalles metálicos y estilo contemporáneo.",
-    "image": "casasMinimalistas5.jpeg"
-  }
-]
+{
+  "Colonial": [
+    { "id": 1, "image": "assets/casaColonial1.jpg", "name": "Casa Colonial 1", "price": 120000, "description": "Hermosa casa colonial con amplios jardines" },
+    { "id": 2, "image": "assets/casaColonial2.jpg", "name": "Casa Colonial 2", "price": 130000, "description": "Casa colonial de lujo con detalles arquitectónicos excepcionales" },
+    { "id": 3, "image": "assets/casaColonial3.jpg", "name": "Casa Colonial 3", "price": 140000, "description": "Casa colonial perfecta para una familia grande" },
+    { "id": 4, "image": "assets/casaColonial4.jpg", "name": "Casa Colonial 4", "price": 135000, "description": "Casa colonial elegante con detalles clásicos" },
+    { "id": 5, "image": "assets/casaColonial5.jpg", "name": "Casa Colonial 5", "price": 145000, "description": "Casa colonial con hermosos acabados" }
+  ],
+  "Moderna": [
+    { "id": 1, "image": "assets/casaModerna1.jpeg", "name": "Casa Moderna 1", "price": 200000, "description": "Casa moderna con diseño contemporáneo" },
+    { "id": 2, "image": "assets/casaModerna2.jpeg", "name": "Casa Moderna 2", "price": 210000, "description": "Casa moderna ideal para familias jóvenes" },
+    { "id": 3, "image": "assets/casaModerna3.jpeg", "name": "Casa Moderna 3", "price": 220000, "description": "Casa con acabados de lujo y tecnología avanzada" },
+    { "id": 4, "image": "assets/casaModerna4.jpeg", "name": "Casa Moderna 4", "price": 230000, "description": "Casa moderna con piscina y jardín" },
+    { "id": 5, "image": "assets/casaModerna5.jpeg", "name": "Casa Moderna 5", "price": 240000, "description": "Casa con vista panorámica y gran espacio" }
+  ],
+  "Playa": [
+    { "id": 1, "image": "assets/casasDePlaya1.jpg", "name": "Casa de Playa 1", "price": 180000, "description": "Casa en la playa con vistas espectaculares al mar" },
+    { "id": 2, "image": "assets/casasDePlaya2.jpg", "name": "Casa de Playa 2", "price": 190000, "description": "Casa de playa perfecta para vacacionar" },
+    { "id": 3, "image": "assets/casasDePlaya3.jpg", "name": "Casa de Playa 3", "price": 200000, "description": "Casa de playa con amplio espacio y acceso directo a la arena" },
+    { "id": 4, "image": "assets/casasDePlaya4.jpg", "name": "Casa de Playa 4", "price": 210000, "description": "Casa de playa con excelentes acabados" },
+    { "id": 5, "image": "assets/casasDePlaya5.jpg", "name": "Casa de Playa 5", "price": 220000, "description": "Casa de playa con grandes ventanales" }
+  ],
+  "Minimalistas": [
+    { "id": 1, "image": "assets/casasMinimalistas1.jpg", "name": "Casa Minimalista 1", "price": 250000, "description": "Casa minimalista con diseño abierto" },
+    { "id": 2, "image": "assets/casasMinimalistas2.jpg", "name": "Casa Minimalista 2", "price": 260000, "description": "Casa minimalista con interiores modernos" },
+    { "id": 3, "image": "assets/casasMinimalistas3.jpg", "name": "Casa Minimalista 3", "price": 270000, "description": "Casa minimalista ideal para quienes buscan paz y simplicidad" },
+    { "id": 4, "image": "assets/casasMinimalistas4.jpg", "name": "Casa Minimalista 4", "price": 280000, "description": "Casa minimalista con grandes ventanales" },
+    { "id": 5, "image": "assets/casasMinimalistas5.jpg", "name": "Casa Minimalista 5", "price": 290000, "description": "Casa minimalista de lujo con un gran diseño de espacios" }
+  ],
+  "Campo": [
+    { "id": 1, "image": "assets/casaDeCampo1.jpg", "name": "Casa de Campo 1", "price": 150000, "description": "Casa de campo perfecta para escapar de la ciudad" },
+    { "id": 2, "image": "assets/casaDeCampo2.jpg", "name": "Casa de Campo 2", "price": 160000, "description": "Casa de campo rodeada de naturaleza y tranquilidad" },
+    { "id": 3, "image": "assets/casaDeCampo3.jpg", "name": "Casa de Campo 3", "price": 170000, "description": "Casa de campo con amplios jardines y piscina" },
+    { "id": 4, "image": "assets/casaDeCampo4.jpg", "name": "Casa de Campo 4", "price": 180000, "description": "Casa de campo de estilo rústico con muchas comodidades" },
+    { "id": 5, "image": "assets/casaDeCampo5.jpg", "name": "Casa de Campo 5", "price": 190000, "description": "Casa de campo ideal para retiros de fin de semana" }
+  ]
+}

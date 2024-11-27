@@ -1,28 +1,76 @@
-import React, { useState } from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
-import categorias from '../data/categories.json';  // Datos locales de categorías
+import React, { useState, useEffect } from 'react';
+import { View, Text, FlatList, Image, TouchableOpacity, StyleSheet } from 'react-native';
+
+const categoriesData = [
+  { id: 1, name: 'Casas Modernas' },
+  { id: 2, name: 'Casas de Campo' },
+  { id: 3, name: 'Casas Coloniales' },
+  { id: 4, name: 'Casas de Playa' },
+  { id: 5, name: 'Casas Minimalistas' },
+];
+
+const categoryImages = {
+  casasmodernas: [
+    require('../../assets/casaModerna1.jpg'),
+    require('../../assets/casaModerna2.jpeg'),
+    require('../../assets/casaModerna3.jpeg'),
+  ],
+  casasdecampo: [
+    require('../../assets/casaDeCampo1.jpg'),
+    require('../../assets/casaDeCampo2.jpg'),
+    require('../../assets/casaDeCampo3.jpg'),
+  ],
+  casascoloniales: [
+    require('../../assets/casaColonial1.jpg'),
+    require('../../assets/casaColonial2.jpg'),
+    require('../../assets/casaColonial3.jpg'),
+  ],
+  casasdeplaya: [
+    require('../../assets/casasDePlaya.jpg'),
+    require('../../assets/casasDePlaya2.jpeg'),
+    require('../../assets/casasDePlaya3.jpg'),
+  ],
+  casasminimalistas: [
+    require('../../assets/casasMinimalistas.jpeg'),
+    require('../../assets/casasMinimalistas2.jpg'),
+    require('../../assets/casasMinimalistas3.jpg'),
+  ],
+};
 
 const HomeScreen = ({ navigation }) => {
+  const [categories, setCategories] = useState([]);
+
+  const loadCategoriesWithImages = () => {
+    const categoriesWithImages = categoriesData.map((category) => {
+      const categoryName = category.name.toLowerCase().replace(/\s+/g, '');
+      const images = categoryImages[categoryName] || [];
+      return { ...category, images };
+    });
+    setCategories(categoriesWithImages);
+  };
+
+  useEffect(() => {
+    loadCategoriesWithImages();
+  }, []);
+
   const handleCategoryPress = (category) => {
     navigation.navigate('DreamHouseScreen', { category });
   };
 
   const renderCategoryItem = ({ item }) => (
     <TouchableOpacity style={styles.card} onPress={() => handleCategoryPress(item)}>
-      {/* Aquí mantenemos la conexión a la API para las imágenes */}
-      <Image source={{ uri: `https://via.placeholder.com/150` }} style={styles.cardImage} />
+      <Image source={item.images[0]} style={styles.cardImage} />
       <Text style={styles.cardTitle}>{item.name}</Text>
     </TouchableOpacity>
   );
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Elige una Categoría</Text>
+      <Text style={styles.title}>Explora Casas por Estilo</Text>
       <FlatList
-        data={categorias}
+        data={categories}
         renderItem={renderCategoryItem}
         keyExtractor={(item) => item.id.toString()}
-        numColumns={1}
         contentContainerStyle={styles.flatListContent}
       />
     </View>
