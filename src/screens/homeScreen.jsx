@@ -11,29 +11,29 @@ const categoriesData = [
 
 const categoryImages = {
   casasmodernas: [
-    require('../../assets/casaModerna1.jpg'),
-    require('../../assets/casaModerna2.jpeg'),
-    require('../../assets/casaModerna3.jpeg'),
+    require('../assets/casaModerna1.jpg'),
+    require('../assets/casaModerna2.jpeg'),
+    require('../assets/casaModerna3.jpeg'),
   ],
   casasdecampo: [
-    require('../../assets/casaDeCampo1.jpg'),
-    require('../../assets/casaDeCampo2.jpg'),
-    require('../../assets/casaDeCampo3.jpg'),
+    require('../assets/casaDeCampo1.jpg'),
+    require('../assets/casaDeCampo2.jpg'),
+    require('../assets/casaDeCampo3.jpg'),
   ],
   casascoloniales: [
-    require('../../assets/casaColonial1.jpg'),
-    require('../../assets/casaColonial2.jpg'),
-    require('../../assets/casaColonial3.jpg'),
+    require('../assets/casaColonial1.jpg'),
+    require('../assets/casaColonial2.jpg'),
+    require('../assets/casaColonial3.jpg'),
   ],
   casasdeplaya: [
-    require('../../assets/casasDePlaya.jpg'),
-    require('../../assets/casasDePlaya2.jpeg'),
-    require('../../assets/casasDePlaya3.jpg'),
+    require('../assets/casasDePlaya.jpg'),
+    require('../assets/casasDePlaya2.jpeg'),
+    require('../assets/casasDePlaya3.jpg'),
   ],
   casasminimalistas: [
-    require('../../assets/casasMinimalistas.jpeg'),
-    require('../../assets/casasMinimalistas2.jpg'),
-    require('../../assets/casasMinimalistas3.jpg'),
+    require('../assets/casasMinimalistas.jpeg'),
+    require('../assets/casasMinimalistas2.jpg'),
+    require('../assets/casasMinimalistas3.jpg'),
   ],
 };
 

@@ -1,63 +1,57 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, StyleSheet, FlatList, TextInput } from 'react-native';
+import { View, Text, Image, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import productsData from '../data/products.json';
+import { images } from '../data/image';
 
 const DreamHouseScreen = ({ route }) => {
   const { category } = route.params;
-  const [images, setImages] = useState([]);
-  const [filteredImages, setFilteredImages] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const imageMap = {
-    casasmodernas: require('../../assets/casaModerna1.jpg'),
-    casasdecampo: require('../../assets/casaColonial1.jpg'),
-    casascoloniales: require('../../assets/casaDeCampo1.jpg'),
-    casasdeplaya: require('../../assets/casasDePlaya.jpg'),
-    casasminimalistas: require('../../assets/casasMinimalistas.jpeg'),
-  };
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const loadImages = () => {
-      const categoryName = category?.name?.toLowerCase()?.replace(/\s+/g, '') || '';
-      const validImages = category?.images && Array.isArray(category.images)
-        ? category.images.map((image, index) => ({
-            ...image,
-            url: imageMap[categoryName] || null,
-            id: index,
-          })).filter(item => item.url !== null)
-        : [];
-      setImages(validImages);
-      setFilteredImages(validImages);
+    const categoryMap = {
+      "Casas Modernas": "Moderna",
+      "Casas de Campo": "Campo",
+      "Casas Coloniales": "Colonial",
+      "Casas Minimalistas": "Minimalistas",
+      "Casas de Playa": "Playa",
     };
-    loadImages();
+    const loadProducts = () => {
+      const normalizedCategoryName = categoryMap[category.name.trim()] || category.name.trim();
+      const filteredProducts = productsData.filter(product =>
+        product.name.toLowerCase().includes(normalizedCategoryName.toLowerCase())
+      );
+      setProducts(filteredProducts);
+    };
+    loadProducts();
   }, [category]);
 
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-    const filtered = images.filter((image) =>
-      image.url?.toString().toLowerCase().includes(query.toLowerCase())
-    );
-    setFilteredImages(filtered);
+  const handleBuyPress = (product) => {
+    alert(`Compraste el producto: ${product.name}`);
   };
 
-  const renderImageItem = ({ item }) => (
-    <View style={[styles.image, { backgroundColor: 'lightgray' }]}>
-      <Image source={item.url} style={styles.imageContent} />
-    </View>
-  );
+  const renderProductItem = ({ item }) => {
+    return (
+      <View style={styles.productCard}>
+        <Image source={images[item.image]} style={styles.productImage} />
+        <Text style={styles.productName}>{item.name}</Text>
+        <Text style={styles.productPrice}>${item.price.toLocaleString()}</Text>
+        <TouchableOpacity
+          style={styles.buyButton}
+          onPress={() => handleBuyPress(item)}
+        >
+          <Text style={styles.buyButtonText}>Comprar</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{category?.name || 'Categoría no disponible'}</Text>
-      <TextInput
-        style={styles.searchBar}
-        placeholder="Buscar imágenes..."
-        value={searchQuery}
-        onChangeText={handleSearch}
-      />
       <FlatList
-        data={filteredImages}
-        renderItem={renderImageItem}
-        keyExtractor={(item) => `image-${item.id}`}
+        data={products}
+        renderItem={renderProductItem}
+        keyExtractor={(item) => item.id.toString()}
         numColumns={2}
         contentContainerStyle={styles.flatListContent}
       />
@@ -77,30 +71,45 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 20,
   },
-  searchBar: {
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 10,
-    paddingHorizontal: 10,
-    marginBottom: 15,
-  },
   flatListContent: {
     paddingHorizontal: 5,
   },
-  image: {
+  productCard: {
     width: '45%',
-    height: 200,
-    margin: 5,
+    backgroundColor: '#f9f9f9',
+    margin: 10,
     borderRadius: 10,
-    justifyContent: 'center',
+    padding: 10,
+    elevation: 5,
     alignItems: 'center',
   },
-  imageContent: {
+  productImage: {
     width: '100%',
-    height: '100%',
+    height: 200,
     borderRadius: 10,
+    marginBottom: 10,
     resizeMode: 'cover',
+  },
+  productName: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  productPrice: {
+    fontSize: 14,
+    color: '#ff7f50',
+    marginBottom: 10,
+  },
+  buyButton: {
+    backgroundColor: '#4CAF50',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+  },
+  buyButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 });
 

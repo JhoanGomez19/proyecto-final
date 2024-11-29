@@ -1,37 +1,177 @@
-{
-  "Colonial": [
-    { "id": 1, "image": "assets/casaColonial1.jpg", "name": "Casa Colonial 1", "price": 120000, "description": "Hermosa casa colonial con amplios jardines" },
-    { "id": 2, "image": "assets/casaColonial2.jpg", "name": "Casa Colonial 2", "price": 130000, "description": "Casa colonial de lujo con detalles arquitectónicos excepcionales" },
-    { "id": 3, "image": "assets/casaColonial3.jpg", "name": "Casa Colonial 3", "price": 140000, "description": "Casa colonial perfecta para una familia grande" },
-    { "id": 4, "image": "assets/casaColonial4.jpg", "name": "Casa Colonial 4", "price": 135000, "description": "Casa colonial elegante con detalles clásicos" },
-    { "id": 5, "image": "assets/casaColonial5.jpg", "name": "Casa Colonial 5", "price": 145000, "description": "Casa colonial con hermosos acabados" }
-  ],
-  "Moderna": [
-    { "id": 1, "image": "assets/casaModerna1.jpeg", "name": "Casa Moderna 1", "price": 200000, "description": "Casa moderna con diseño contemporáneo" },
-    { "id": 2, "image": "assets/casaModerna2.jpeg", "name": "Casa Moderna 2", "price": 210000, "description": "Casa moderna ideal para familias jóvenes" },
-    { "id": 3, "image": "assets/casaModerna3.jpeg", "name": "Casa Moderna 3", "price": 220000, "description": "Casa con acabados de lujo y tecnología avanzada" },
-    { "id": 4, "image": "assets/casaModerna4.jpeg", "name": "Casa Moderna 4", "price": 230000, "description": "Casa moderna con piscina y jardín" },
-    { "id": 5, "image": "assets/casaModerna5.jpeg", "name": "Casa Moderna 5", "price": 240000, "description": "Casa con vista panorámica y gran espacio" }
-  ],
-  "Playa": [
-    { "id": 1, "image": "assets/casasDePlaya1.jpg", "name": "Casa de Playa 1", "price": 180000, "description": "Casa en la playa con vistas espectaculares al mar" },
-    { "id": 2, "image": "assets/casasDePlaya2.jpg", "name": "Casa de Playa 2", "price": 190000, "description": "Casa de playa perfecta para vacacionar" },
-    { "id": 3, "image": "assets/casasDePlaya3.jpg", "name": "Casa de Playa 3", "price": 200000, "description": "Casa de playa con amplio espacio y acceso directo a la arena" },
-    { "id": 4, "image": "assets/casasDePlaya4.jpg", "name": "Casa de Playa 4", "price": 210000, "description": "Casa de playa con excelentes acabados" },
-    { "id": 5, "image": "assets/casasDePlaya5.jpg", "name": "Casa de Playa 5", "price": 220000, "description": "Casa de playa con grandes ventanales" }
-  ],
-  "Minimalistas": [
-    { "id": 1, "image": "assets/casasMinimalistas1.jpg", "name": "Casa Minimalista 1", "price": 250000, "description": "Casa minimalista con diseño abierto" },
-    { "id": 2, "image": "assets/casasMinimalistas2.jpg", "name": "Casa Minimalista 2", "price": 260000, "description": "Casa minimalista con interiores modernos" },
-    { "id": 3, "image": "assets/casasMinimalistas3.jpg", "name": "Casa Minimalista 3", "price": 270000, "description": "Casa minimalista ideal para quienes buscan paz y simplicidad" },
-    { "id": 4, "image": "assets/casasMinimalistas4.jpg", "name": "Casa Minimalista 4", "price": 280000, "description": "Casa minimalista con grandes ventanales" },
-    { "id": 5, "image": "assets/casasMinimalistas5.jpg", "name": "Casa Minimalista 5", "price": 290000, "description": "Casa minimalista de lujo con un gran diseño de espacios" }
-  ],
-  "Campo": [
-    { "id": 1, "image": "assets/casaDeCampo1.jpg", "name": "Casa de Campo 1", "price": 150000, "description": "Casa de campo perfecta para escapar de la ciudad" },
-    { "id": 2, "image": "assets/casaDeCampo2.jpg", "name": "Casa de Campo 2", "price": 160000, "description": "Casa de campo rodeada de naturaleza y tranquilidad" },
-    { "id": 3, "image": "assets/casaDeCampo3.jpg", "name": "Casa de Campo 3", "price": 170000, "description": "Casa de campo con amplios jardines y piscina" },
-    { "id": 4, "image": "assets/casaDeCampo4.jpg", "name": "Casa de Campo 4", "price": 180000, "description": "Casa de campo de estilo rústico con muchas comodidades" },
-    { "id": 5, "image": "assets/casaDeCampo5.jpg", "name": "Casa de Campo 5", "price": 190000, "description": "Casa de campo ideal para retiros de fin de semana" }
-  ]
-}
+[
+  {
+    "id": 1,
+    "name": "Casa Colonial 1",
+    "image": "casaColonial1.jpg",
+    "price": 120000,
+    "description": "Hermosa casa colonial con amplios jardines"
+  },
+  {
+    "id": 2,
+    "name": "Casa Colonial 2",
+    "image": "casaColonial2.jpg",
+    "price": 130000,
+    "description": "Casa colonial de lujo con detalles arquitectónicos excepcionales"
+  },
+  {
+    "id": 3,
+    "name": "Casa Colonial 3",
+    "image": "casaColonial3.jpg",
+    "price": 140000,
+    "description": "Casa colonial perfecta para una familia grande"
+  },
+  {
+    "id": 4,
+    "name": "Casa Colonial 4",
+    "image": "casaColonial4.jpg",
+    "price": 135000,
+    "description": "Casa colonial elegante con detalles clásicos"
+  },
+  {
+    "id": 5,
+    "name": "Casa Colonial 5",
+    "image": "casaColonial5.jpeg",
+    "price": 145000,
+    "description": "Casa colonial con hermosos acabados"
+  },
+  {
+    "id": 6,
+    "name": "Casa Moderna 1",
+    "image": "casaModerna1.jpg",
+    "price": 200000,
+    "description": "Casa moderna con diseño contemporáneo"
+  },
+  {
+    "id": 7,
+    "name": "Casa Moderna 2",
+    "image": "casaModerna2.jpeg",
+    "price": 210000,
+    "description": "Casa moderna ideal para familias jóvenes"
+  },
+  {
+    "id": 8,
+    "name": "Casa Moderna 3",
+    "image": "casaModerna3.jpeg",
+    "price": 220000,
+    "description": "Casa con acabados de lujo y tecnología avanzada"
+  },
+  {
+    "id": 9,
+    "name": "Casa Moderna 4",
+    "image": "casaModerna4.jpeg",
+    "price": 230000,
+    "description": "Casa moderna con piscina y jardín"
+  },
+  {
+    "id": 10,
+    "name": "Casa Moderna 5",
+    "image": "casaModerna5.jpg",
+    "price": 240000,
+    "description": "Casa con vista panorámica y gran espacio"
+  },
+  {
+    "id": 11,
+    "name": "Casa de Playa 1",
+    "image": "casasDePlaya.jpg",
+    "price": 180000,
+    "description": "Casa en la playa con vistas espectaculares al mar"
+  },
+  {
+    "id": 12,
+    "name": "Casa de Playa 2",
+    "image": "casasDePlaya2.jpeg",
+    "price": 190000,
+    "description": "Casa de playa perfecta para vacacionar"
+  },
+  {
+    "id": 13,
+    "name": "Casa de Playa 3",
+    "image": "casasDePlaya3.jpg",
+    "price": 200000,
+    "description": "Casa de playa con amplio espacio y acceso directo a la arena"
+  },
+  {
+    "id": 14,
+    "name": "Casa de Playa 4",
+    "image": "casasDePlaya4.jpg",
+    "price": 210000,
+    "description": "Casa de playa con excelentes acabados"
+  },
+  {
+    "id": 15,
+    "name": "Casa de Playa 5",
+    "image": "casasDePlaya5.jpeg",
+    "price": 220000,
+    "description": "Casa de playa con grandes ventanales"
+  },
+  {
+    "id": 16,
+    "name": "Casa Minimalista 1",
+    "image": "casasMinimalistas.jpeg",
+    "price": 250000,
+    "description": "Casa minimalista con diseño abierto"
+  },
+  {
+    "id": 17,
+    "name": "Casa Minimalista 2",
+    "image": "casasMinimalistas2.jpg",
+    "price": 260000,
+    "description": "Casa minimalista con interiores modernos"
+  },
+  {
+    "id": 18,
+    "name": "Casa Minimalista 3",
+    "image": "casasMinimalistas3.jpg",
+    "price": 270000,
+    "description": "Casa minimalista ideal para quienes buscan paz y simplicidad"
+  },
+  {
+    "id": 19,
+    "name": "Casa Minimalista 4",
+    "image": "casasMinimalistas4.jpg",
+    "price": 280000,
+    "description": "Casa minimalista con grandes ventanales"
+  },
+  {
+    "id": 20,
+    "name": "Casa Minimalista 5",
+    "image": "casasMinimalistas5.jpeg",
+    "price": 290000,
+    "description": "Casa minimalista de lujo con un gran diseño de espacios"
+  },
+  {
+    "id": 21,
+    "name": "Casa de Campo 1",
+    "image": "casaDeCampo1.jpg",
+    "price": 150000,
+    "description": "Casa de campo perfecta para escapar de la ciudad"
+  },
+  {
+    "id": 22,
+    "name": "Casa de Campo 2",
+    "image": "casaDeCampo2.jpg",
+    "price": 160000,
+    "description": "Casa de campo rodeada de naturaleza y tranquilidad"
+  },
+  {
+    "id": 23,
+    "name": "Casa de Campo 3",
+    "image": "casaDeCampo3.jpg",
+    "price": 170000,
+    "description": "Casa de campo con amplios jardines y piscina"
+  },
+  {
+    "id": 24,
+    "name": "Casa de Campo 4",
+    "image": "casaDeCampo4.jpg",
+    "price": 180000,
+    "description": "Casa de campo de estilo rústico con muchas comodidades"
+  },
+  {
+    "id": 25,
+    "name": "Casa de Campo 5",
+    "image": "casaDeCampo5.jpeg",
+    "price": 190000,
+    "description": "Casa de campo ideal para retiros de fin de semana"
+  }
+]
