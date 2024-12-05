@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import productsData from '../data/products.json';
 import { images } from '../data/image';
+import SearchBar from '../components/searchBar';
 
-const DreamHouseScreen = ({ route }) => {
+const DreamHouseScreen = ({ route, navigation}) => {
   const { category } = route.params;
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     const categoryMap = {
@@ -15,41 +18,54 @@ const DreamHouseScreen = ({ route }) => {
       "Casas Minimalistas": "Minimalistas",
       "Casas de Playa": "Playa",
     };
+
     const loadProducts = () => {
       const normalizedCategoryName = categoryMap[category.name.trim()] || category.name.trim();
       const filteredProducts = productsData.filter(product =>
         product.name.toLowerCase().includes(normalizedCategoryName.toLowerCase())
       );
       setProducts(filteredProducts);
+      setFilteredProducts(filteredProducts); // Inicializar con todos los productos de la categoría
     };
+
     loadProducts();
   }, [category]);
 
-  const handleBuyPress = (product) => {
-    alert(`Compraste el producto: ${product.name}`);
+  useEffect(() => {
+    const searchProducts = () => {
+      const searchQuery = search.toLowerCase();
+      const results = products.filter(product =>
+        product.name.toLowerCase().includes(searchQuery)
+      );
+      setFilteredProducts(results);
+    };
+    searchProducts();
+  }, [search, products]);
+
+  const handleMoreInfoPress = (product) => {
+    navigation.navigate('HouseDetails', { house: product });
   };
 
-  const renderProductItem = ({ item }) => {
-    return (
-      <View style={styles.productCard}>
-        <Image source={images[item.image]} style={styles.productImage} />
-        <Text style={styles.productName}>{item.name}</Text>
-        <Text style={styles.productPrice}>${item.price.toLocaleString()}</Text>
-        <TouchableOpacity
-          style={styles.buyButton}
-          onPress={() => handleBuyPress(item)}
-        >
-          <Text style={styles.buyButtonText}>Comprar</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  };
+  const renderProductItem = ({ item }) => (
+    <View style={styles.productCard}>
+      <Image source={images[item.image]} style={styles.productImage} />
+      <Text style={styles.productName}>{item.name}</Text>
+      <Text style={styles.productPrice}>${item.price.toLocaleString()}</Text>
+      <TouchableOpacity
+        style={styles.infoButton}
+        onPress={() => handleMoreInfoPress(item)}
+      >
+        <Text style={styles.infoButtonText}>Más Información</Text>
+      </TouchableOpacity>
+    </View>
+  );
 
   return (
     <View style={styles.container}>
+      <SearchBar search={search} setSearch={setSearch} />
       <Text style={styles.title}>{category?.name || 'Categoría no disponible'}</Text>
       <FlatList
-        data={products}
+        data={filteredProducts}
         renderItem={renderProductItem}
         keyExtractor={(item) => item.id.toString()}
         numColumns={2}
@@ -100,13 +116,13 @@ const styles = StyleSheet.create({
     color: '#ff7f50',
     marginBottom: 10,
   },
-  buyButton: {
+  infoButton: {
     backgroundColor: '#4CAF50',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
   },
-  buyButtonText: {
+  infoButtonText: {
     color: 'white',
     fontWeight: 'bold',
     fontSize: 16,
