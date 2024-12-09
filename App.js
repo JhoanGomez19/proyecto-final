@@ -5,7 +5,10 @@ import AppNavigator from './src/navigation/appNavigator';
 const App = () => {
   return (
     <NavigationContainer>
-      <AppNavigator />
+      {/* Contenedor principal con el ID agregado */}
+      <div id="app">
+        <AppNavigator />
+      </div>
     </NavigationContainer>
   );
 };

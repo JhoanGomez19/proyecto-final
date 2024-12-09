@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Aplicación</title>
+
+    <!-- Firebase SDKs -->
+    <script defer src="/__/firebase/11.0.2/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/11.0.2/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/11.0.2/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/11.0.2/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/11.0.2/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- Estilos básicos -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      #app {
+        text-align: center;
+      }
+      h1 {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Contenedor principal de la app -->
+    <div id="app">
+      <h1>Cargando aplicación...</h1>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Firebase se inicializa automáticamente con init.js
+        try {
+          const app = firebase.app();
+          console.log("Firebase inicializado:", app);
+        } catch (e) {
+          console.error("Error al inicializar Firebase:", e);
+        }
+      });
+    </script>
+
+    <!-- Archivo principal de la lógica de la aplicación -->
+    <script defer src="./App.js"></script>
+  </body>
+</html>
